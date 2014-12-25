@@ -6,10 +6,12 @@ using Android.Views;
 
 namespace AnimalAdjectives.AndroidSpecific
 {
-	public class ImageLoader : AsyncTask
+	public class ImageLoader : AsyncTask<String, String, Bitmap>
 	{
 		private ImageView _imageView;
 		private View _spinner;
+
+		private Bitmap foundImage;
 
 		public ImageLoader (ImageView imageView, View spinner)
 		{
@@ -17,21 +19,28 @@ namespace AnimalAdjectives.AndroidSpecific
 			_spinner = spinner;
 		}
 
-		#region implemented abstract members of AsyncTask
-
-		protected override Java.Lang.Object DoInBackground (params Java.Lang.Object[] imageSources)
-		{
-			string source = (string)imageSources[0];
-			Bitmap firstImage = BitmapTools.GetFirstImageFromGoogleSearch (source);
-			try {
-				_imageView.SetImageBitmap (firstImage);
-			} catch {
-
-			}
-			return null;
+		protected override Bitmap RunInBackground(params string[] strings) {
+			string source = strings[0];
+			foundImage = BitmapTools.GetFirstImageFromGoogleSearch (source);
+			return foundImage;
 		}
 
-		#endregion
+
+		protected override void OnPostExecute(Bitmap result) {
+			if (!this.IsCancelled && foundImage != null) {
+				SetVisible(_imageView);
+				SetInvisible(_spinner);
+				_imageView.SetImageBitmap (foundImage);
+			}
+		}
+
+		public static void SetInvisible(View view) {
+			view.Visibility = ViewStates.Gone;
+		}
+
+		public static void SetVisible(View view) {
+			view.Visibility = ViewStates.Visible;
+		}
 	}
 }
 

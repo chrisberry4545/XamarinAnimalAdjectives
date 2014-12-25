@@ -28,12 +28,12 @@ namespace AnimalAdjectives
 
 			// Get our button from the layout resource,
 			// and attach an event to it
-			Button button = FindViewById<Button> (Resource.Id.myButton);
+			Button nextButton = FindViewById<Button> (Resource.Id.nextButton);
 			Button prevButton = FindViewById<Button> (Resource.Id.prevButton);
 
 			TextView fullWordText = FindViewById<TextView> (Resource.Id.fullWordText);
 
-			button.Click += delegate {
+			nextButton.Click += delegate {
 				string nextWord = handler.GetNextWord();
 				if (!String.IsNullOrEmpty(nextWord)) {
 					fullWordText.Text = nextWord;
@@ -48,12 +48,24 @@ namespace AnimalAdjectives
 					ShowImage();
 				}
 			};
+
+			nextButton.CallOnClick ();
 		}
 
+		private ImageLoader loader;
 		private void ShowImage() {
 			ImageView pictureView = FindViewById<ImageView> (Resource.Id.pictureView);
+			View spinner = FindViewById (Resource.Id.spinner);
+
+			ImageLoader.SetInvisible (pictureView);
+			ImageLoader.SetVisible (spinner);
+
+			if (loader != null && !loader.IsCancelled) {
+				loader.Cancel (true);
+				loader.Dispose ();
+			}
 			string currentImageName = handler.GetCurrentWordImageName ();
-			ImageLoader loader = new ImageLoader (pictureView, null);
+			loader = new ImageLoader (pictureView, spinner);
 			loader.Execute (currentImageName);
 		}
 	}

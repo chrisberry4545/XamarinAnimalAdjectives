@@ -13,11 +13,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/pictureView" />
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner" />
     <Button
-        android:id="@+id/myButton"
+        android:id="@+id/nextButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello" />
+        android:text="Next" />
     <Button
         android:text="Previous"
         android:layout_width="match_parent"

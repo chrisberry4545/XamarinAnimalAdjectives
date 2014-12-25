@@ -10,6 +10,7 @@ public class ImageLoader
 	static {
 		__md_methods = 
 			"n_doInBackground:([Ljava/lang/Object;)Ljava/lang/Object;:GetDoInBackground_arrayLjava_lang_Object_Handler\n" +
+			"n_onPostExecute:(Ljava/lang/Object;)V:GetOnPostExecute_Ljava_lang_Object_Handler\n" +
 			"";
 		mono.android.Runtime.register ("AnimalAdjectives.AndroidSpecific.ImageLoader, AnimalAdjectives, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", ImageLoader.class, __md_methods);
 	}
@@ -36,6 +37,14 @@ public class ImageLoader
 	}
 
 	private native java.lang.Object n_doInBackground (java.lang.Object[] p0);
+
+
+	public void onPostExecute (java.lang.Object p0)
+	{
+		n_onPostExecute (p0);
+	}
+
+	private native void n_onPostExecute (java.lang.Object p0);
 
 	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
