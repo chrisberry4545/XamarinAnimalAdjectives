@@ -51,8 +51,13 @@
     <Compile Include="Code\Words\Adjective.cs" />
     <Compile Include="Code\Words\WordComponent.cs" />
     <Compile Include="Code\Words\CombinedAnimalAdjective.cs" />
-    <Compile Include="Code\ImageHandlers\ImageLoader.cs" />
     <Compile Include="Code\GoogleSearchUtils\SearchUtils.cs" />
+    <Compile Include="Code\AndroidSpecific\BitmapTools.cs" />
+    <Compile Include="Code\AndroidSpecific\ImageLoader.cs" />
+    <Compile Include="Code\Words\AnimalAdjectiveHandler.cs" />
+    <Compile Include="Code\Favourites\FavouritesManager.cs" />
+    <Compile Include="Code\AndroidSpecific\AndroidStorage.cs" />
+    <Compile Include="Code\Favourites\StorageInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -70,6 +75,8 @@
     <Folder Include="Code\Words\" />
     <Folder Include="Code\ImageHandlers\" />
     <Folder Include="Code\GoogleSearchUtils\" />
+    <Folder Include="Code\AndroidSpecific\" />
+    <Folder Include="Code\Favourites\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\listofadjectives.txt" />

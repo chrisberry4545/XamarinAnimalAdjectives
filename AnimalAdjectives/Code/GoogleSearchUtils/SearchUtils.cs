@@ -1,8 +1,11 @@
 ﻿using System;
-using Android.Graphics;
-using Java.Net;
 using System.Xml;
 using System.IO;
+using System.Drawing;
+using System.Net;
+using System.Text.RegularExpressions;
+using System.Collections.Generic;
+
 
 namespace AnimalAdjectives.GoogleSearchUtils
 {
@@ -15,46 +18,28 @@ namespace AnimalAdjectives.GoogleSearchUtils
 		{
 		}
 
-		public static Bitmap GetFirstImageFromGoogleSearch(string searchURL) 
-		{
-			string fullSearchURL = GoogleSearchStart + searchURL + GoogleSearchEnd;
-			return GetBitmapFromURL(GetImageSrc (fullSearchURL));
-		}
-
 		public static string GetImageSrc(string url) 
 		{
-			//Load the html for the url and create a html document from it.
-			XmlDocument doc = new XmlDocument ();
-			doc.Load (url);
-			return GetFirstImageFromHtml (doc);
-		}
+			/*I had to use this method to parse the HTML as you can't include
+			3rd party libraries in Xamarin free version.*/
+			using (var client = new WebClient()) {
+				String html = client.DownloadString(url);
 
-		public static String GetFirstImageFromHtml(XmlDocument doc)//HTML Doc? Alt to JSoup 
-		{
-			//Get all image tags
-			var allImages = doc.GetElementsByTagName("img");
+				int indexOfFirstImg = html.IndexOf("<img");
+				html = html.Substring (indexOfFirstImg);
 
-			//Get src of first image tag
-			if (allImages != null && allImages.Count > 0) {
-				var firstImage =  allImages[0];
-				return firstImage.ToString();
-			}
-			return null;
-		}
+				int indexOfImgSrc = html.IndexOf ("src=");
 
-		public static Bitmap GetBitmapFromURL(String src) {
-			try {
-				URL url = new URL(src);
-				HttpURLConnection connection = (HttpURLConnection) url.OpenConnection();
-				//connection.setDoInput(true);
-				connection.Connect();
-				InputStream input = connection.getInputStream();
-				Bitmap myBitmap = BitmapFactory.decodeStream(input);
-				return myBitmap;
-			} catch (IOException e) {
-				throw;
+				html = html.Substring (indexOfImgSrc + 5);
+
+				//Find first double quote
+				int indexOfEndOfImgSrc = html.IndexOf ("\"");
+				html = html.Substring (0, indexOfEndOfImgSrc);
+
+				return html;
 			}
 		}
+
 
 	}
 }

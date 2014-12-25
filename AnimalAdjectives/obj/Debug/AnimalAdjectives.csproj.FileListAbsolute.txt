@@ -1,0 +1,13 @@
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\bin\Debug\AnimalAdjectives.dll
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\bin\Debug\AnimalAdjectives.pdb
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\bin\Debug\AnimalAdjectives.dll.mdb
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\bin\Debug\AnimalAdjectives.AnimalAdjectives.apk
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\bin\Debug\AnimalAdjectives.AnimalAdjectives-Signed.apk
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\AnimalAdjectives.dll
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\AnimalAdjectives.pdb
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\android\bin\AnimalAdjectives.AnimalAdjectives.apk
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\layout\main.xml
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\values\strings.xml
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\drawable\icon.png
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\R.cs.flag
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\uploadflags.txt

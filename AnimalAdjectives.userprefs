@@ -1,0 +1,24 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.AVD_for_10_1_WXGA_Tablet" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="AnimalAdjectives\Code\AndroidSpecific\ImageLoader.cs">
+    <Files>
+      <File FileName="AnimalAdjectives\MainActivity.cs" Line="1" Column="1" />
+      <File FileName="AnimalAdjectives\Code\Words\Animal.cs" Line="1" Column="1" />
+      <File FileName="AnimalAdjectives\Code\Words\WordComponent.cs" Line="21" Column="21" />
+      <File FileName="AnimalAdjectives\Code\Words\Adjective.cs" Line="2" Column="2" />
+      <File FileName="AnimalAdjectives\Code\Words\CombinedAnimalAdjective.cs" Line="9" Column="9" />
+      <File FileName="AnimalAdjectives\Assets\AboutAssets.txt" Line="1" Column="1" />
+      <File FileName="AnimalAdjectives\Assets\listofadjectives.txt" Line="1" Column="1" />
+      <File FileName="AnimalAdjectives\Code\GoogleSearchUtils\SearchUtils.cs" Line="26" Column="26" />
+      <File FileName="AnimalAdjectives\Code\AndroidSpecific\BitmapTools.cs" Line="53" Column="53" />
+      <File FileName="AnimalAdjectives\Code\AndroidSpecific\ImageLoader.cs" Line="3" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Chris\Documents\Projects\AnimalAdjectives\AnimalAdjectives\Code\GoogleSearchUtils\SearchUtils.cs" line="40" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.AnimalAdjectives MonoForAntroid.PreferredDevice="Nexus 4" />
+</Properties>

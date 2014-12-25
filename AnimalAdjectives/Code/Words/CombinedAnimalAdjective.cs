@@ -41,6 +41,10 @@ namespace AnimalAdjectives.Words
 			_wordComponents [0] = new Adjective ();
 			_wordComponents [1] = new Animal ();
 		}
+
+		public CombinedAnimalAdjective(WordComponent[] wordComponents) {
+			this._wordComponents = wordComponents;
+		}
 	}
 }
 

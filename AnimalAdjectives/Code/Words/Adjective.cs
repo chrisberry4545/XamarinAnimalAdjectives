@@ -10,6 +10,11 @@ namespace AnimalAdjectives.Words
 		public Adjective (): base(adjectivesListName)
 		{
 		}
+
+		public Adjective(String text) : base(null)
+		{
+			this.Text = text;
+		}
 	}
 }
 

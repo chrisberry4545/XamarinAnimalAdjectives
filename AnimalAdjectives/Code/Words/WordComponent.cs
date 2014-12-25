@@ -14,7 +14,9 @@ namespace AnimalAdjectives.Words
 
 		public WordComponent (String listFileName)
 		{
-			this.Text = GenerateText (listFileName);
+			if (!String.IsNullOrEmpty (listFileName)) {
+				this.Text = GenerateText (listFileName);
+			}
 		}
 
 		public string GetImageSearchURL() {

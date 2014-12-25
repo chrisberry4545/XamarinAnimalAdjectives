@@ -1,0 +1,2 @@
+AnimalAdjectives.MainActivity;animaladjectives.MainActivity
+AnimalAdjectives.AndroidSpecific.ImageLoader;animaladjectives.androidspecific.ImageLoader

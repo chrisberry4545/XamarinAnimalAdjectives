@@ -12,6 +12,12 @@ namespace AnimalAdjectives.Words
 		{
 			this.ImageName = this.Text + animalImageTerm;
 		}
+
+		public Animal(String text) : base(null)
+		{
+			this.Text = text;
+			this.ImageName = this.Text + animalImageTerm;
+		}
 	}
 }
 
