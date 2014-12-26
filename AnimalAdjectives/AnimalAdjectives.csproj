@@ -58,6 +58,7 @@
     <Compile Include="Code\Favourites\FavouritesManager.cs" />
     <Compile Include="Code\AndroidSpecific\AndroidStorage.cs" />
     <Compile Include="Code\Favourites\StorageInterface.cs" />
+    <Compile Include="Code\AndroidSpecific\ConnectionTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -68,6 +69,48 @@
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\facebookshare.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_sharefb.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_favorite2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_favorite_selected2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_next_item.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_previous_item.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_settings.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Thumbs.db" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_sharefb.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_favorite2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_favorite_selected2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_next_item.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_previous_item.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_settings.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Thumbs.db" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_sharefb.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_favorite2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_favorite_selected2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_next_item.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_previous_item.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_settings.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Thumbs.db" />
+    <AndroidResource Include="Resources\drawable-mdpi\icon_sharefb.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_favorite2.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_favorite_selected2.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_next_item.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_previous_item.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_settings.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\Thumbs.db" />
+    <AndroidResource Include="Resources\drawable-ldpi\ic_action_favorite2.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\ic_action_favorite_selected2.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\ic_action_next_item.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\ic_action_previous_item.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\Thumbs.db" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\values\dimens.xml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -77,6 +120,11 @@
     <Folder Include="Code\GoogleSearchUtils\" />
     <Folder Include="Code\AndroidSpecific\" />
     <Folder Include="Code\Favourites\" />
+    <Folder Include="Resources\drawable-hdpi\" />
+    <Folder Include="Resources\drawable-xxhdpi\" />
+    <Folder Include="Resources\drawable-xhdpi\" />
+    <Folder Include="Resources\drawable-mdpi\" />
+    <Folder Include="Resources\drawable-ldpi\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\listofadjectives.txt" />

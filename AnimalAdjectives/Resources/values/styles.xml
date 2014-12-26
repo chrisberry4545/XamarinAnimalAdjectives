@@ -1,0 +1,17 @@
+﻿<resources>
+
+	<style name="AppTheme" parent="android:Theme.Holo.Light">
+    	<item name="android:actionBarStyle">@style/ActionBarTheme</item>
+	</style>
+
+	<style name="ActionBarTheme" parent="android:Widget.Holo.Light.ActionBar.Solid.Inverse">
+	    <item name="android:background">@color/title_bar_color</item>
+	    <item name="android:titleTextStyle">@style/title_style</item>
+	</style>
+
+    <style name="title_style">
+  		<item name="android:textColor">@color/main_color</item>
+    </style>
+    
+
+</resources>

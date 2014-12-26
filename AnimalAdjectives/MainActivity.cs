@@ -12,7 +12,7 @@ using AnimalAdjectives.AndroidSpecific;
 
 namespace AnimalAdjectives
 {
-	[Activity (Label = "AnimalAdjectives", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "Animal Adjectives", MainLauncher = true, Icon = "@drawable/ic_launcher")]
 	public class MainActivity : Activity
 	{
 
@@ -28,8 +28,8 @@ namespace AnimalAdjectives
 
 			// Get our button from the layout resource,
 			// and attach an event to it
-			Button nextButton = FindViewById<Button> (Resource.Id.nextButton);
-			Button prevButton = FindViewById<Button> (Resource.Id.prevButton);
+			View nextButton = FindViewById (Resource.Id.nextButton);
+			View prevButton = FindViewById (Resource.Id.prevButton);
 
 			TextView fullWordText = FindViewById<TextView> (Resource.Id.fullWordText);
 
@@ -55,18 +55,22 @@ namespace AnimalAdjectives
 		private ImageLoader loader;
 		private void ShowImage() {
 			ImageView pictureView = FindViewById<ImageView> (Resource.Id.pictureView);
-			View spinner = FindViewById (Resource.Id.spinner);
+			View spinner = FindViewById (Resource.Id.spinnerWrapper);
 
 			ImageLoader.SetInvisible (pictureView);
-			ImageLoader.SetVisible (spinner);
+			if (ConnectionTest.IsNetworkAvailable ()) {
+				ImageLoader.SetVisible (spinner);
 
-			if (loader != null && !loader.IsCancelled) {
-				loader.Cancel (true);
-				loader.Dispose ();
+				if (loader != null && !loader.IsCancelled) {
+					loader.Cancel (true);
+					loader.Dispose ();
+				}
+				string currentImageName = handler.GetCurrentWordImageName ();
+				loader = new ImageLoader (pictureView, spinner);
+				loader.Execute (currentImageName);
+			} else {
+				ImageLoader.SetInvisible (spinner);
 			}
-			string currentImageName = handler.GetCurrentWordImageName ();
-			loader = new ImageLoader (pictureView, spinner);
-			loader.Execute (currentImageName);
 		}
 	}
 }

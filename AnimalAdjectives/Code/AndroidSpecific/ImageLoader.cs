@@ -19,10 +19,11 @@ namespace AnimalAdjectives.AndroidSpecific
 			_spinner = spinner;
 		}
 
-		protected override Bitmap RunInBackground(params string[] strings) {
-			string source = strings[0];
-			foundImage = BitmapTools.GetFirstImageFromGoogleSearch (source);
-			return foundImage;
+		protected override Bitmap RunInBackground(params string[] strings) 
+		{
+				string source = strings[0];
+				foundImage = BitmapTools.GetFirstImageFromGoogleSearch (source);
+				return foundImage;
 		}
 
 
