@@ -50,6 +50,6 @@ C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\Anima
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\drawable-ldpi\thumbs.db
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\values\colors.xml
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\values\dimens.xml
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\values\styles.xml
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\R.cs.flag
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\uploadflags.txt
-C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\values\styles.xml

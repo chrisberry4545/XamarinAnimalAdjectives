@@ -29,7 +29,7 @@ namespace AnimalAdjectives.AndroidSpecific
 				Bitmap myBitmap = BitmapFactory.DecodeStream(input);
 				return myBitmap;
 			} catch (IOException) {
-				throw;
+				return null;
 			}
 		}
 	}
