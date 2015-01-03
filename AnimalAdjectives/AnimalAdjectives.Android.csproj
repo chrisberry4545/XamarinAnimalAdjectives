@@ -16,6 +16,8 @@
     <AssemblyName>AnimalAdjectives</AssemblyName>
     <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,13 +54,19 @@
     <Compile Include="Code\Words\WordComponent.cs" />
     <Compile Include="Code\Words\CombinedAnimalAdjective.cs" />
     <Compile Include="Code\GoogleSearchUtils\SearchUtils.cs" />
-    <Compile Include="Code\AndroidSpecific\BitmapTools.cs" />
-    <Compile Include="Code\AndroidSpecific\ImageLoader.cs" />
     <Compile Include="Code\Words\AnimalAdjectiveHandler.cs" />
     <Compile Include="Code\Favourites\FavouritesManager.cs" />
     <Compile Include="Code\AndroidSpecific\AndroidStorage.cs" />
     <Compile Include="Code\Favourites\StorageInterface.cs" />
-    <Compile Include="Code\AndroidSpecific\ConnectionTest.cs" />
+    <Compile Include="Code\AndroidSpecific\AndroidBitmapTools.cs" />
+    <Compile Include="Code\AndroidSpecific\AndroidConnectionTest.cs" />
+    <Compile Include="Code\AndroidSpecific\AndroidImageLoader.cs" />
+    <Compile Include="Code\AndroidSpecific\AndroidMenuHandler.cs" />
+    <Compile Include="Code\PlatformSpecificInterfaces\IMenuHandler.cs" />
+    <Compile Include="Code\PlatformSpecificInterfaces\PlatformSpecificHandler.cs" />
+    <Compile Include="FavouritesFragment.cs" />
+    <Compile Include="HomeFragment.cs" />
+    <Compile Include="SettingsFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -111,6 +119,14 @@
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\values\dimens.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\menu\main.xml" />
+    <AndroidResource Include="Resources\layout\Favourites.xml" />
+    <AndroidResource Include="Resources\layout\Home.xml" />
+    <AndroidResource Include="Resources\layout\Settings.axml" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_play.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_play.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_play.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_play.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -125,6 +141,8 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-mdpi\" />
     <Folder Include="Resources\drawable-ldpi\" />
+    <Folder Include="Resources\menu\" />
+    <Folder Include="Code\PlatformSpecificInterfaces\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\listofadjectives.txt" />

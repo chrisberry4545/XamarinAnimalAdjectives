@@ -1,47 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.0019c28b2186be" />
-  <MonoDevelop.Ide.Workbench>
-    <Files>
-      <File FileName="AnimalAdjectives\MainActivity.cs" Line="12" Column="12" />
-      <File FileName="AnimalAdjectives\Code\Words\Animal.cs" Line="1" Column="1" />
-      <File FileName="AnimalAdjectives\Code\Words\WordComponent.cs" Line="45" Column="45" />
-      <File FileName="AnimalAdjectives\Code\Words\Adjective.cs" Line="19" Column="19" />
-      <File FileName="AnimalAdjectives\Code\Words\CombinedAnimalAdjective.cs" Line="42" Column="42" />
-      <File FileName="AnimalAdjectives\Assets\AboutAssets.txt" Line="1" Column="1" />
-      <File FileName="AnimalAdjectives\Assets\listofadjectives.txt" Line="1" Column="1" />
-      <File FileName="AnimalAdjectives\Code\GoogleSearchUtils\SearchUtils.cs" Line="24" Column="24" />
-      <File FileName="AnimalAdjectives\Code\AndroidSpecific\BitmapTools.cs" Line="4" Column="4" />
-      <File FileName="AnimalAdjectives\Code\AndroidSpecific\ImageLoader.cs" Line="23" Column="23" />
-      <File FileName="AnimalAdjectives\Code\Words\AnimalAdjectiveHandler.cs" Line="40" Column="40" />
-      <File FileName="AnimalAdjectives\Properties\AndroidManifest.xml" Line="12" Column="12" />
-      <File FileName="AnimalAdjectives\Code\Favourites\FavouritesManager.cs" Line="37" Column="37" />
-      <File FileName="AnimalAdjectives\Code\AndroidSpecific\AndroidStorage.cs" Line="69" Column="69" />
-      <File FileName="AnimalAdjectives\Code\Favourites\StorageInterface.cs" Line="38" Column="38" />
-      <File FileName="AnimalAdjectives\Resources\Resource.designer.cs" Line="1" Column="1" />
-      <File FileName="AnimalAdjectives\Code\AndroidSpecific\ConnectionTest.cs" Line="1" Column="1" />
-      <File FileName="AnimalAdjectives\Resources\values\colors.xml" Line="28" Column="28" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="AnimalAdjectives" expanded="True">
-            <Node name="References" expanded="True" />
-            <Node name="Code" expanded="True" />
-            <Node name="Properties" expanded="True" />
-            <Node name="Resources" expanded="True">
-              <Node name="layout" expanded="True">
-                <Node name="Main.axml" selected="True" />
-              </Node>
-              <Node name="values" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="C:\Users\Chris\Documents\Projects\AnimalAdjectives\AnimalAdjectives\Code\GoogleSearchUtils\SearchUtils.cs" line="40" column="1" />
+      <Breakpoint file="C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\Code\AndroidSpecific\AndroidMenuHandler.cs" line="17" column="1" />
+      <Breakpoint file="C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\MainActivity.cs" line="88" column="1" />
+      <Breakpoint file="C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\MainActivity.cs" line="93" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

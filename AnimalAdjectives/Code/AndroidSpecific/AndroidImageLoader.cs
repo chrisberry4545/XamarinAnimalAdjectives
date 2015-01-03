@@ -6,14 +6,14 @@ using Android.Views;
 
 namespace AnimalAdjectives.AndroidSpecific
 {
-	public class ImageLoader : AsyncTask<String, String, Bitmap>
+	public class AndroidImageLoader : AsyncTask<String, String, Bitmap>
 	{
 		private ImageView _imageView;
 		private View _spinner;
 
 		private Bitmap foundImage;
 
-		public ImageLoader (ImageView imageView, View spinner)
+		public AndroidImageLoader (ImageView imageView, View spinner)
 		{
 			_imageView = imageView;
 			_spinner = spinner;
@@ -22,7 +22,7 @@ namespace AnimalAdjectives.AndroidSpecific
 		protected override Bitmap RunInBackground(params string[] strings) 
 		{
 				string source = strings[0];
-				foundImage = BitmapTools.GetFirstImageFromGoogleSearch (source);
+				foundImage = AndroidBitmapTools.GetFirstImageFromGoogleSearch (source);
 				return foundImage;
 		}
 

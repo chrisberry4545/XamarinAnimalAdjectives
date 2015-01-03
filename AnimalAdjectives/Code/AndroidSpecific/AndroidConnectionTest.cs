@@ -3,9 +3,9 @@ using Android.Net;
 
 namespace AnimalAdjectives
 {
-	public class ConnectionTest
+	public class AndroidConnectionTest
 	{
-		public ConnectionTest ()
+		public AndroidConnectionTest ()
 		{
 		}
 

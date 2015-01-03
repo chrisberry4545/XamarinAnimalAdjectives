@@ -6,9 +6,9 @@ using Java.Net;
 
 namespace AnimalAdjectives.AndroidSpecific
 {
-	public class BitmapTools
+	public class AndroidBitmapTools
 	{
-		public BitmapTools ()
+		public AndroidBitmapTools ()
 		{
 		}
 
