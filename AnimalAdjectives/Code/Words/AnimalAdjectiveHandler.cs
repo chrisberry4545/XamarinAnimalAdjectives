@@ -35,6 +35,13 @@ namespace AnimalAdjectives.Words
 			return animalAdjectives [currentListIndex].GetImageName ();
 		}
 
+		public CombinedAnimalAdjective CurrentAnimalAdjective {
+			get 
+			{
+				return animalAdjectives [currentListIndex];
+			}
+		}
+
 		public string GetPreviousWord() {
 			if (currentListIndex - 1 < 0) {
 				return null;

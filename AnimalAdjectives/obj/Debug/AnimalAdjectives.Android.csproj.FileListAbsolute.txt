@@ -52,12 +52,12 @@ C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\Anima
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\values\dimens.xml
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\values\styles.xml
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\menu\main.xml
-C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\layout\favourites.xml
-C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\R.cs.flag
-C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\uploadflags.txt
-C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\layout\home.xml
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\layout\settings.xml
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\drawable-xhdpi\ic_action_play.png
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\drawable-xxhdpi\ic_action_play.png
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\drawable-mdpi\ic_action_play.png
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\drawable-hdpi\ic_action_play.png
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\layout\home.xml
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\res\layout\favourites.xml
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\R.cs.flag
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\uploadflags.txt

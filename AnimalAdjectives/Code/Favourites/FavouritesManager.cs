@@ -19,25 +19,47 @@ namespace AnimalAdjectives.Favourites
 			favourites = this.GetStoredString ();
 		}
 
+		public bool AnyFavourites() {
+			if (favourites.Count > 0) {
+				return true;
+			}
+			return false;
+		}
+
 		public string GetNextFavourite() {
+			if (!AnyFavourites ()) {
+				return null;
+			}
+
+
 			if (currentFavouriteIndex + 1 < favourites.Count) {
 				currentFavouriteIndex++;
-				return GetCurrentFavourite ().FullWord;
+			} else {
+				currentFavouriteIndex = 0;
 			}
-			return null;
+			return GetCurrentFavourite ().FullWord;
 		}
 
 		public string GetPreviousFavourite() {
-			if (favourites.Count > 0 && currentFavouriteIndex - 1 > -1) {
-				currentFavouriteIndex--;
-				return GetCurrentFavourite ().FullWord;
+			if (!AnyFavourites ()) {
+				return null;
 			}
-			return null;
+
+			if (currentFavouriteIndex - 1 > -1) {
+				currentFavouriteIndex--;
+			} else {
+				currentFavouriteIndex = favourites.Count - 1;
+			}
+			return GetCurrentFavourite ().FullWord;
 		}
 
 		public void AddToFavourites(CombinedAnimalAdjective combinedAnimalAdjective) {
 			this.favourites.Add (combinedAnimalAdjective);
 			this.CommitString (favourites);
+		}
+
+		public void RemoveFromFavourites(CombinedAnimalAdjective combinedAnimalAdjective) {
+			RemoveFromFavourites (combinedAnimalAdjective.FullWord);
 		}
 
 		public void RemoveFromFavourites(string combinedAnimalAdjective) {
@@ -47,6 +69,17 @@ namespace AnimalAdjectives.Favourites
 
 		public CombinedAnimalAdjective GetCurrentFavourite() {
 			return favourites [currentFavouriteIndex];
+		}
+
+		public bool IsFavourite(CombinedAnimalAdjective combinedAnimalAdjective) {
+			return IsFavourite (combinedAnimalAdjective.FullWord);
+		}
+
+		public bool IsFavourite(string combinedAnimalAdjective) {
+			if (GetMatchingFavouriteIndex (combinedAnimalAdjective) != -1) {
+				return true;
+			}
+			return false;
 		}
 
 		private int GetMatchingFavouriteIndex(string combinedAnimalAdjective) {
@@ -66,11 +99,11 @@ namespace AnimalAdjectives.Favourites
 			foreach (string s in splitString) {
 				if (!String.IsNullOrEmpty (s)) {
 					string[] splitS = s.Split (animalToAdjectiveSeperator);
-					Animal animal = new Animal (splitS[0]);
-					Adjective adjective = new Adjective (splitS[1]);
+					Adjective adjective = new Adjective (splitS[0]);
+					Animal animal = new Animal (splitS[1]);
 					WordComponent[] wordComponents = new WordComponent[2];
-					wordComponents [0] = animal;
-					wordComponents [1] = adjective;
+					wordComponents [0] = adjective;
+					wordComponents [1] = animal;
 					CombinedAnimalAdjective combined = new CombinedAnimalAdjective (wordComponents);
 					allStoredAAs.Add (combined);
 				}
@@ -82,11 +115,11 @@ namespace AnimalAdjectives.Favourites
 			string stringToCommit = "";
 			foreach (var aa in animalAdjectives) {
 				string combinedAA = aa.WordComponents [0].Text + animalToAdjectiveSeperator + aa.WordComponents [1].Text;
-				stringToCommit = combinedAA + seperator;
+				stringToCommit += combinedAA + seperator;
 			}
 
-			if (!String.IsNullOrEmpty(stringToCommit) && stringToCommit.Length > 2) {
-				string stringToSave = stringToCommit.Substring (0, stringToCommit.Length - 2);
+			if (!String.IsNullOrEmpty(stringToCommit) && stringToCommit.Length > 1) {
+				string stringToSave = stringToCommit.Substring (0, stringToCommit.Length - 1);
 				storage.SaveToPreferences (stringToSave);
 			}
 		}

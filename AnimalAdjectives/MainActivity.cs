@@ -16,12 +16,12 @@ namespace AnimalAdjectives
 	[Activity (Label = "Animal Adjectives", MainLauncher = true, Icon = "@drawable/ic_launcher")]
 	public class MainActivity :  Activity 
 	{
+		private readonly static int platformID = PlatformSpecificHandler.Android;
+		private PlatformSpecificHandler platformSpecificHandler = new PlatformSpecificHandler(platformID);
 
 		private AnimalAdjectiveHandler handler = new AnimalAdjectiveHandler();
 		private FavouritesManager favourites = new FavouritesManager();
 
-		private readonly static int platformID = PlatformSpecificHandler.Android;
-		private PlatformSpecificHandler platformSpecificHandler = new PlatformSpecificHandler(platformID);
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -29,8 +29,8 @@ namespace AnimalAdjectives
 
 			this.ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
 
-			this.AddTab ("", Resource.Drawable.ic_action_play, new HomeFragment ());
-			this.AddTab ("", Resource.Drawable.ic_action_favorite2, new FavouritesFragment ());
+			this.AddTab ("", Resource.Drawable.ic_action_play, new HomeFragment (handler, favourites));
+			this.AddTab ("", Resource.Drawable.ic_action_favorite2, new FavouritesFragment (handler, favourites));
 			this.AddTab ("", Resource.Drawable.ic_action_settings, new SettingsFragment ());
 
 			// Set our view from the "main" layout resource
@@ -60,7 +60,7 @@ namespace AnimalAdjectives
 			this.ActionBar.AddTab (tab);
 		}
 
-		public static AndroidImageLoader ShowImage(ImageView pictureView, View spinner, AndroidImageLoader loader, AnimalAdjectiveHandler handler) {
+		public static AndroidImageLoader ShowImage(ImageView pictureView, View spinner, AndroidImageLoader loader, string animalImageName) {
 
 			AndroidImageLoader.SetInvisible (pictureView);
 			if (AndroidConnectionTest.IsNetworkAvailable ()) {
@@ -70,7 +70,7 @@ namespace AnimalAdjectives
 					loader.Cancel (true);
 					loader.Dispose ();
 				}
-				string currentImageName = handler.GetCurrentWordImageName ();
+				string currentImageName = animalImageName;
 				loader = new AndroidImageLoader (pictureView, spinner);
 				loader.Execute (currentImageName);
 			} else {
@@ -78,6 +78,24 @@ namespace AnimalAdjectives
 			}
 
 			return loader;
+		}
+
+		public static void HandleFavouriteButtonClick(ImageView favouriteButton, FavouritesManager favouritesManager, CombinedAnimalAdjective animalAdjective) {
+			if (favouritesManager.IsFavourite (animalAdjective)) {
+				favouriteButton.SetImageResource (Resource.Drawable.ic_action_favorite2);
+				favouritesManager.RemoveFromFavourites (animalAdjective);
+			} else {
+				favouriteButton.SetImageResource (Resource.Drawable.ic_action_favorite_selected2);
+				favouritesManager.AddToFavourites (animalAdjective);
+			}
+		}
+
+		public static void CheckIfFavourite(ImageView favouriteButton, FavouritesManager favouritesManager, CombinedAnimalAdjective animalAdjective) {
+			if (favouritesManager.IsFavourite (animalAdjective)) {
+				favouriteButton.SetImageResource (Resource.Drawable.ic_action_favorite_selected2);
+			} else {
+				favouriteButton.SetImageResource (Resource.Drawable.ic_action_favorite2);
+			}
 		}
 
 	}

@@ -36,22 +36,24 @@ public final class R {
         public static final int monoandroidsplash=0x7f02000a;
     }
     public static final class id {
-        public static final int call=0x7f09000e;
-        public static final int favouritesMenuItem=0x7f09000c;
-        public static final int fullWordText=0x7f090004;
+        public static final int call=0x7f090010;
+        public static final int favImageButton=0x7f09000b;
+        public static final int favViewFavButton=0x7f090004;
+        public static final int favouritesMenuItem=0x7f09000e;
+        public static final int fullWordText=0x7f090005;
         public static final int linearLayout1=0x7f090000;
         public static final int linearLayout2=0x7f090003;
-        public static final int linearLayout3=0x7f090008;
+        public static final int linearLayout3=0x7f090009;
         public static final int linearLayout4=0x7f090001;
-        public static final int main=0x7f09000b;
-        public static final int mainLayout=0x7f09000a;
-        public static final int nextButton=0x7f090009;
-        public static final int pictureView=0x7f090007;
+        public static final int main=0x7f09000d;
+        public static final int mainLayout=0x7f09000c;
+        public static final int nextButton=0x7f09000a;
+        public static final int pictureView=0x7f090008;
         public static final int prevButton=0x7f090002;
-        public static final int settingsMenuItem=0x7f09000f;
-        public static final int spinner=0x7f090006;
-        public static final int spinnerWrapper=0x7f090005;
-        public static final int submenu=0x7f09000d;
+        public static final int settingsMenuItem=0x7f090011;
+        public static final int spinner=0x7f090007;
+        public static final int spinnerWrapper=0x7f090006;
+        public static final int submenu=0x7f09000f;
     }
     public static final class layout {
         public static final int favourites=0x7f030000;

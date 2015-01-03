@@ -120,13 +120,13 @@
     <AndroidResource Include="Resources\values\dimens.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\menu\main.xml" />
-    <AndroidResource Include="Resources\layout\Favourites.xml" />
-    <AndroidResource Include="Resources\layout\Home.xml" />
     <AndroidResource Include="Resources\layout\Settings.axml" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_action_play.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_play.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_action_play.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_action_play.png" />
+    <AndroidResource Include="Resources\layout\Home.axml" />
+    <AndroidResource Include="Resources\layout\Favourites.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
