@@ -6,12 +6,14 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using AnimalAdjectives.Words;
-using AnimalAdjectives.Favourites;
-using AnimalAdjectives.AndroidSpecific;
-using AnimalAdjectives.PlatformSpecificInterfaces;
+using AnimalAdjectivesPortable.Words;
+using AnimalAdjectivesPortable.PlatformSpecificInterfaces;
+using AnimalAdjectivesPortable.SharedGUIHandler;
+using AnimalAdjectivesPortable.Favourites;
+using AnimalAdjectives;
+using AnimalAdjectives.Code.AndroidSpecific;
 
-namespace AnimalAdjectives
+namespace AnimalAdjectivesPortable
 {
 	[Activity (Label = "Animal Adjectives", MainLauncher = true, Icon = "@drawable/ic_launcher")]
 	public class HomeFragment :  Fragment 
@@ -20,8 +22,7 @@ namespace AnimalAdjectives
 		private AnimalAdjectiveHandler handler;
 		private FavouritesManager favourites;
 
-		private readonly static int platformID = PlatformSpecificHandler.Android;
-		private PlatformSpecificHandler platformSpecificHandler = new PlatformSpecificHandler(platformID);
+		private PlatformSpecificHandler platformSpecificHandler = new PlatformSpecificHandler();
 
 		private View view;
 
@@ -29,13 +30,18 @@ namespace AnimalAdjectives
 		private View spinner;
 
 		private ImageView favsButton;
-
-
 		private AndroidImageLoader loader;
 
-		public HomeFragment(AnimalAdjectiveHandler aaHandler, FavouritesManager favs) {
+		private SharedGeneralGUIHandler _sharedGUIHandler;
+		private SharedHomeGUIHandler _sharedHomeGUIHandler;
+
+		public HomeFragment(AnimalAdjectiveHandler aaHandler, FavouritesManager favs, 
+			SharedGeneralGUIHandler sharedGUIHandler, SharedHomeGUIHandler sharedHomeGUIHandler) {
 			this.handler = aaHandler;
 			this.favourites = favs;
+
+			this._sharedGUIHandler = sharedGUIHandler;
+			this._sharedHomeGUIHandler = sharedHomeGUIHandler;
 		}
 
 		public override View OnCreateView (LayoutInflater inflater,
@@ -58,13 +64,13 @@ namespace AnimalAdjectives
 			TextView fullWordText = view.FindViewById<TextView> (Resource.Id.fullWordText);
 
 			nextButton.Click += delegate {
-				SetWord(handler.GetNextWord (), fullWordText);
+				HandleClickResult(_sharedHomeGUIHandler.NextWord(handler, fullWordText, favsButton, favourites));
 			};
 			prevButton.Click += delegate {
-				SetWord(handler.GetPreviousWord (), fullWordText);
+				HandleClickResult(_sharedHomeGUIHandler.PreviousWord(handler, fullWordText, favsButton, favourites));
 			};
 			favsButton.Click += delegate {
-				MainActivity.HandleFavouriteButtonClick(favsButton, this.favourites, handler.CurrentAnimalAdjective);
+				_sharedGUIHandler.HandleFavouriteButtonClick(favsButton, this.favourites, handler.CurrentAnimalAdjective);
 			};
 
 			nextButton.CallOnClick ();
@@ -72,11 +78,9 @@ namespace AnimalAdjectives
 			return this.view;
 		}
 
-		private void SetWord(String text, TextView fullWordText) {
-			if (!String.IsNullOrEmpty (text)) {
-				fullWordText.Text = text;
-				ShowImage();
-				MainActivity.CheckIfFavourite (favsButton, this.favourites, this.handler.CurrentAnimalAdjective);
+		public void HandleClickResult(bool result) {
+			if (result) {
+				this.ShowImage ();
 			}
 		}
 

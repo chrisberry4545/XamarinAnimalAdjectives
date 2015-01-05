@@ -3,12 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalAdjectives.Android", "AnimalAdjectives.Android.csproj", "{9B6D06D4-7C6B-46BC-BF65-E41B81A7B50A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalAdjectivesPortable", "AnimalAdjectivesPortable\AnimalAdjectivesPortable.csproj", "{14EA46E2-5883-4A7E-8E70-75A5D85AE067}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14EA46E2-5883-4A7E-8E70-75A5D85AE067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14EA46E2-5883-4A7E-8E70-75A5D85AE067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14EA46E2-5883-4A7E-8E70-75A5D85AE067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14EA46E2-5883-4A7E-8E70-75A5D85AE067}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9B6D06D4-7C6B-46BC-BF65-E41B81A7B50A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9B6D06D4-7C6B-46BC-BF65-E41B81A7B50A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B6D06D4-7C6B-46BC-BF65-E41B81A7B50A}.Release|Any CPU.ActiveCfg = Release|Any CPU

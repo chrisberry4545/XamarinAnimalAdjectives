@@ -2,12 +2,15 @@
 using Android.App;
 using Android.Widget;
 using Android.Views;
-using AnimalAdjectives.Words;
-using AnimalAdjectives.Favourites;
+using AnimalAdjectivesPortable.Words;
+using AnimalAdjectivesPortable.PlatformSpecificInterfaces;
 using Android.OS;
-using AnimalAdjectives.AndroidSpecific;
+using AnimalAdjectivesPortable.SharedGUIHandler;
+using AnimalAdjectivesPortable.Favourites;
+using AnimalAdjectives.Code.AndroidSpecific;
+using AnimalAdjectives;
 
-namespace AnimalAdjectives
+namespace AnimalAdjectivesPortable
 {
 	public class FavouritesFragment : Fragment
 	{
@@ -20,11 +23,20 @@ namespace AnimalAdjectives
 		private View spinner;
 		private AndroidImageLoader loader;
 
+		private TextView fullWordText;
+
 		private ImageView favsButton;
 
-		public FavouritesFragment(AnimalAdjectiveHandler aaHandler, FavouritesManager favs) {
+		private SharedGeneralGUIHandler _sharedGUIHandler;
+		private SharedFavouritesGUIHandler _favouritesGUIHandler;
+
+		public FavouritesFragment(AnimalAdjectiveHandler aaHandler, FavouritesManager favs, 
+			SharedGeneralGUIHandler sharedGUIHandler, SharedFavouritesGUIHandler favouritesGUIHandler) {
 			this.handler = aaHandler;
 			this.favourites = favs;
+
+			this._sharedGUIHandler = sharedGUIHandler;
+			this._favouritesGUIHandler = favouritesGUIHandler;
 		}
 
 		public override View OnCreateView (LayoutInflater inflater,
@@ -44,43 +56,41 @@ namespace AnimalAdjectives
 			View prevButton = view.FindViewById (Resource.Id.prevButton);
 			this.favsButton = view.FindViewById<ImageView> (Resource.Id.favViewFavButton);
 
-			TextView fullWordText = view.FindViewById<TextView> (Resource.Id.fullWordText);
+			this.fullWordText = view.FindViewById<TextView> (Resource.Id.fullWordText);
 
 			nextButton.Click += delegate {
-				SetNewFavourite(favourites.GetNextFavourite(), fullWordText);
+				HandleShowingImageResult(this._favouritesGUIHandler.
+					NextFavourite(favourites, fullWordText, this.favsButton));
 			};
 			prevButton.Click += delegate {
-				SetNewFavourite(favourites.GetPreviousFavourite(), fullWordText);
+				HandleShowingImageResult(this._favouritesGUIHandler.PreviousFavourite
+					(favourites, fullWordText, this.favsButton));
 			};
 			favsButton.Click += delegate {
-				MainActivity.HandleFavouriteButtonClick(favsButton, this.favourites, this.favourites.GetCurrentFavourite());
+				_sharedGUIHandler.HandleFavouriteButtonClick
+				(favsButton, this.favourites, this.favourites.GetCurrentFavourite());
 			};
 
-
-			SetNewFavourite (favourites.GetCurrentFavourite ().FullWord, fullWordText);
-
+			HandleShowingImageResult (_favouritesGUIHandler.ShowCurrentFavourite 
+				(favourites, fullWordText, this.favsButton));
 			return view;
 
 		}
 
-		private void SetNewFavourite(String text, TextView fullWordText) {
-			if (!String.IsNullOrEmpty(text)) {
-				fullWordText.Text = text;
-				ShowImage();
-				MainActivity.CheckIfFavourite (favsButton, this.favourites, this.favourites.GetCurrentFavourite());
+		private void HandleShowingImageResult(bool result) {
+			if (result) {
+				ShowImage ();
 			} else {
-				HandleNullFav(fullWordText);
+				HandleNullFav ();
 			}
-		}
-
-		private void HandleNullFav(TextView fullWordText) {
-			fullWordText.Text = "You currently have no favourites selected.";
-			AndroidImageLoader.SetInvisible (this.spinner);
-			AndroidImageLoader.SetInvisible (this.pictureView);
 		}
 
 		private void ShowImage() {
 			this.loader = MainActivity.ShowImage (this.pictureView, this.spinner, this.loader, this.favourites.GetCurrentFavourite().GetImageName());
+		}
+
+		private void HandleNullFav() {
+			_favouritesGUIHandler.HandleNullFav(fullWordText, this.spinner, this.pictureView);
 		}
 	}
 }

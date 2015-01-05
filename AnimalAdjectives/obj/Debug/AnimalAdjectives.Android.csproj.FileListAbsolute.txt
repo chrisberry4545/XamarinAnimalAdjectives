@@ -3,6 +3,10 @@ C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\Anima
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\bin\Debug\AnimalAdjectives.dll.mdb
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\bin\Debug\AnimalAdjectives.AnimalAdjectives.apk
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\bin\Debug\AnimalAdjectives.AnimalAdjectives-Signed.apk
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\bin\Debug\AnimalAdjectivesPortable.dll
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\bin\Debug\AnimalAdjectivesPortable.pdb
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\bin\Debug\AnimalAdjectivesPortable.dll.mdb
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\AnimalAdjectives.Android.csprojResolveAssemblyReference.cache
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\AnimalAdjectives.dll
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\AnimalAdjectives.pdb
 C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\obj\Debug\android\bin\AnimalAdjectives.AnimalAdjectives.apk

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{14EA46E2-5883-4A7E-8E70-75A5D85AE067}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AnimalAdjectivesPortable</RootNamespace>
+    <AssemblyName>AnimalAdjectivesPortable</AssemblyName>
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Favourites\FavouritesManager.cs" />
+    <Compile Include="GoogleSearchUtils\SearchUtils.cs" />
+    <Compile Include="PlatformSpecificInterfaces\IMenuHandler.cs" />
+    <Compile Include="PlatformSpecificInterfaces\IStorageInterface.cs" />
+    <Compile Include="PlatformSpecificInterfaces\IToastManager.cs" />
+    <Compile Include="PlatformSpecificInterfaces\IViewHandler.cs" />
+    <Compile Include="PlatformSpecificInterfaces\PlatformSpecificHandler.cs" />
+    <Compile Include="SharedGUIHandler\SharedFavouritesGUIHandler.cs" />
+    <Compile Include="SharedGUIHandler\SharedGeneralGUIHandler.cs" />
+    <Compile Include="SharedGUIHandler\SharedHomeGUIHandler.cs" />
+    <Compile Include="Words\Adjective.cs" />
+    <Compile Include="Words\Animal.cs" />
+    <Compile Include="Words\AnimalAdjectiveHandler.cs" />
+    <Compile Include="Words\CombinedAnimalAdjective.cs" />
+    <Compile Include="Words\WordComponent.cs" />
+    <Compile Include="PlatformSpecificInterfaces\IFileReader.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="System.Net">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\System.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

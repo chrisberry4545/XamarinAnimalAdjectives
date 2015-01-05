@@ -6,19 +6,17 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using AnimalAdjectives.Words;
-using AnimalAdjectives.Favourites;
-using AnimalAdjectives.AndroidSpecific;
-using AnimalAdjectives.PlatformSpecificInterfaces;
+using AnimalAdjectivesPortable.Words;
+using AnimalAdjectivesPortable.PlatformSpecificInterfaces;
+using AnimalAdjectives;
 
-namespace AnimalAdjectives
+namespace AnimalAdjectivesPortable
 {
 	[Activity (Label = "Animal Adjectives", MainLauncher = true, Icon = "@drawable/ic_launcher")]
 	public class SettingsFragment :  Fragment 
 	{
 
-		private readonly static int platformID = PlatformSpecificHandler.Android;
-		private PlatformSpecificHandler platformSpecificHandler = new PlatformSpecificHandler(platformID);
+		private PlatformSpecificHandler platformSpecificHandler = new PlatformSpecificHandler();
 
 		private View view;
 

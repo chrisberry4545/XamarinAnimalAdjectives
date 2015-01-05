@@ -1,0 +1,9 @@
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\AnimalAdjectivesPortable\bin\Debug\AnimalAdjectivesPortable.dll
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\AnimalAdjectivesPortable\bin\Debug\AnimalAdjectivesPortable.pdb
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\AnimalAdjectivesPortable\bin\Debug\System.Net.dll
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\AnimalAdjectivesPortable\bin\Debug\System.dll
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\AnimalAdjectivesPortable\bin\Debug\System.Xml.dll
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\AnimalAdjectivesPortable\bin\Debug\System.xml
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\AnimalAdjectivesPortable\bin\Debug\System.Xml.xml
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\AnimalAdjectivesPortable\obj\Debug\AnimalAdjectivesPortable.dll
+C:\Users\Chris\Documents\Projects\AnimalAdjectives\XamarinAnimalAdjectives\AnimalAdjectives\AnimalAdjectivesPortable\obj\Debug\AnimalAdjectivesPortable.pdb

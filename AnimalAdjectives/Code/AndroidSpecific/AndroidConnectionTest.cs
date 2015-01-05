@@ -1,7 +1,7 @@
 ﻿using System;
 using Android.Net;
 
-namespace AnimalAdjectives
+namespace AnimalAdjectives.Code.AndroidSpecific
 {
 	public class AndroidConnectionTest
 	{

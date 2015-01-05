@@ -40,33 +40,25 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Mono.Android" />
     <Reference Include="System" />
     <Reference Include="System.Xml" />
-    <Reference Include="System.Core" />
-    <Reference Include="Mono.Android" />
+    <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Code\Words\Animal.cs" />
-    <Compile Include="Code\Words\Adjective.cs" />
-    <Compile Include="Code\Words\WordComponent.cs" />
-    <Compile Include="Code\Words\CombinedAnimalAdjective.cs" />
-    <Compile Include="Code\GoogleSearchUtils\SearchUtils.cs" />
-    <Compile Include="Code\Words\AnimalAdjectiveHandler.cs" />
-    <Compile Include="Code\Favourites\FavouritesManager.cs" />
     <Compile Include="Code\AndroidSpecific\AndroidStorage.cs" />
-    <Compile Include="Code\Favourites\StorageInterface.cs" />
-    <Compile Include="Code\AndroidSpecific\AndroidBitmapTools.cs" />
     <Compile Include="Code\AndroidSpecific\AndroidConnectionTest.cs" />
-    <Compile Include="Code\AndroidSpecific\AndroidImageLoader.cs" />
-    <Compile Include="Code\AndroidSpecific\AndroidMenuHandler.cs" />
-    <Compile Include="Code\PlatformSpecificInterfaces\IMenuHandler.cs" />
-    <Compile Include="Code\PlatformSpecificInterfaces\PlatformSpecificHandler.cs" />
     <Compile Include="FavouritesFragment.cs" />
     <Compile Include="HomeFragment.cs" />
     <Compile Include="SettingsFragment.cs" />
+    <Compile Include="Code\AndroidSpecific\AndroidGUI\AndroidImageLoader.cs" />
+    <Compile Include="Code\AndroidSpecific\AndroidGUI\AndroidBitmapTools.cs" />
+    <Compile Include="Code\AndroidSpecific\AndroidGUI\AndroidViewHandler.cs" />
+    <Compile Include="Code\AndroidSpecific\AndroidGUI\AndroidToastManager.cs" />
+    <Compile Include="Code\AndroidSpecific\AndroidFileReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -131,21 +123,23 @@
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Code\" />
-    <Folder Include="Code\Words\" />
-    <Folder Include="Code\ImageHandlers\" />
-    <Folder Include="Code\GoogleSearchUtils\" />
     <Folder Include="Code\AndroidSpecific\" />
-    <Folder Include="Code\Favourites\" />
     <Folder Include="Resources\drawable-hdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-mdpi\" />
     <Folder Include="Resources\drawable-ldpi\" />
     <Folder Include="Resources\menu\" />
-    <Folder Include="Code\PlatformSpecificInterfaces\" />
+    <Folder Include="Code\AndroidSpecific\AndroidGUI\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\listofadjectives.txt" />
     <AndroidAsset Include="Assets\listofanimals.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="AnimalAdjectivesPortable\AnimalAdjectivesPortable.csproj">
+      <Project>{14EA46E2-5883-4A7E-8E70-75A5D85AE067}</Project>
+      <Name>AnimalAdjectivesPortable</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

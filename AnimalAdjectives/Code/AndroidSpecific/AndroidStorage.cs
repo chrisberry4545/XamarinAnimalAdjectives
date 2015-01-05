@@ -1,13 +1,13 @@
 ﻿using System;
-using AnimalAdjectives.Words;
-using AnimalAdjectives.Favourites;
+using AnimalAdjectivesPortable.Words;
+using AnimalAdjectivesPortable.PlatformSpecificInterfaces;
 using System.Collections.Generic;
 using Android.Content;
 using Android.Preferences;
 
-namespace AnimalAdjectives.AndroidSpecific
+namespace AnimalAdjectives.Code.AndroidSpecific
 {
-	public class AndroidStorage : StorageInterface
+	public class AndroidStorage : IStorageInterface
 	{
 		private static readonly string favouritesStorageName = "animaladjectives";
 

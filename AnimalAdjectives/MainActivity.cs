@@ -6,31 +6,51 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using AnimalAdjectives.Words;
-using AnimalAdjectives.Favourites;
-using AnimalAdjectives.AndroidSpecific;
-using AnimalAdjectives.PlatformSpecificInterfaces;
+using AnimalAdjectivesPortable.Words;
+using AnimalAdjectivesPortable.PlatformSpecificInterfaces;
+using AnimalAdjectivesPortable.SharedGUIHandler;
+using AnimalAdjectives.Code.AndroidSpecific;
+using AnimalAdjectivesPortable.Favourites;
+using AnimalAdjectives;
 
-namespace AnimalAdjectives
+namespace AnimalAdjectivesPortable
 {
 	[Activity (Label = "Animal Adjectives", MainLauncher = true, Icon = "@drawable/ic_launcher")]
 	public class MainActivity :  Activity 
 	{
-		private readonly static int platformID = PlatformSpecificHandler.Android;
-		private PlatformSpecificHandler platformSpecificHandler = new PlatformSpecificHandler(platformID);
 
-		private AnimalAdjectiveHandler handler = new AnimalAdjectiveHandler();
-		private FavouritesManager favourites = new FavouritesManager();
+		private PlatformSpecificHandler platformSpecificHandler;
+		private AnimalAdjectiveHandler handler;
+		private FavouritesManager favourites;
 
+		private SharedGeneralGUIHandler sharedGeneralGUIHandler;
+		private SharedHomeGUIHandler sharedHomeGUIHandler;
+		private SharedFavouritesGUIHandler sharedFavouriteGUIHandler;
 
 		protected override void OnCreate (Bundle bundle)
 		{
+			platformSpecificHandler = new PlatformSpecificHandler();
+
+			platformSpecificHandler.StorageInterface = new AndroidStorage ();
+			platformSpecificHandler.ViewHandler = new AndroidViewHandler ();
+			platformSpecificHandler.ToastManager = new AndroidToastManager ();
+			platformSpecificHandler.FileReader = new AndroidFileReader ();
+
+
+
+			handler = new AnimalAdjectiveHandler(platformSpecificHandler);
+			favourites = new FavouritesManager(platformSpecificHandler);
+
+			this.sharedGeneralGUIHandler = new SharedGeneralGUIHandler (platformSpecificHandler);
+			this.sharedFavouriteGUIHandler = new SharedFavouritesGUIHandler (platformSpecificHandler, sharedGeneralGUIHandler);
+			this.sharedHomeGUIHandler = new SharedHomeGUIHandler (platformSpecificHandler, sharedGeneralGUIHandler);
+
 			base.OnCreate (bundle);
 
 			this.ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
 
-			this.AddTab ("", Resource.Drawable.ic_action_play, new HomeFragment (handler, favourites));
-			this.AddTab ("", Resource.Drawable.ic_action_favorite2, new FavouritesFragment (handler, favourites));
+			this.AddTab ("", Resource.Drawable.ic_action_play, new HomeFragment (handler, favourites, sharedGeneralGUIHandler, sharedHomeGUIHandler));
+			this.AddTab ("", Resource.Drawable.ic_action_favorite2, new FavouritesFragment (handler, favourites, sharedGeneralGUIHandler, sharedFavouriteGUIHandler));
 			this.AddTab ("", Resource.Drawable.ic_action_settings, new SettingsFragment ());
 
 			// Set our view from the "main" layout resource
@@ -62,9 +82,10 @@ namespace AnimalAdjectives
 
 		public static AndroidImageLoader ShowImage(ImageView pictureView, View spinner, AndroidImageLoader loader, string animalImageName) {
 
-			AndroidImageLoader.SetInvisible (pictureView);
+			AndroidViewHandler imageSetter = new AndroidViewHandler ();
+			imageSetter.SetInvisible (pictureView);
 			if (AndroidConnectionTest.IsNetworkAvailable ()) {
-				AndroidImageLoader.SetVisible (spinner);
+				imageSetter.SetVisible (spinner);
 
 				if (loader != null && !loader.IsCancelled) {
 					loader.Cancel (true);
@@ -74,28 +95,10 @@ namespace AnimalAdjectives
 				loader = new AndroidImageLoader (pictureView, spinner);
 				loader.Execute (currentImageName);
 			} else {
-				AndroidImageLoader.SetInvisible (spinner);
+				imageSetter.SetInvisible (spinner);
 			}
 
 			return loader;
-		}
-
-		public static void HandleFavouriteButtonClick(ImageView favouriteButton, FavouritesManager favouritesManager, CombinedAnimalAdjective animalAdjective) {
-			if (favouritesManager.IsFavourite (animalAdjective)) {
-				favouriteButton.SetImageResource (Resource.Drawable.ic_action_favorite2);
-				favouritesManager.RemoveFromFavourites (animalAdjective);
-			} else {
-				favouriteButton.SetImageResource (Resource.Drawable.ic_action_favorite_selected2);
-				favouritesManager.AddToFavourites (animalAdjective);
-			}
-		}
-
-		public static void CheckIfFavourite(ImageView favouriteButton, FavouritesManager favouritesManager, CombinedAnimalAdjective animalAdjective) {
-			if (favouritesManager.IsFavourite (animalAdjective)) {
-				favouriteButton.SetImageResource (Resource.Drawable.ic_action_favorite_selected2);
-			} else {
-				favouriteButton.SetImageResource (Resource.Drawable.ic_action_favorite2);
-			}
 		}
 
 	}
